@@ -1,0 +1,322 @@
+@charset "UTF-8";
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+header {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+  position: fixed;
+  z-index:1;
+  top: 0;
+  overflow: hidden;
+  border-bottom: 2px solid #f2f2f2;
+}
+.menu {
+  position: absolute;
+  width: 100%;
+}
+.menu a {
+  color: #002149;
+  display: inline-block;
+  padding: 40px 15px;
+  text-decoration: none;
+  text-transform:uppercase;
+  font-size:14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.connexion{
+ text-align:right;
+  margin-right:40px;
+  position:relative;
+}
+.connexion a {
+  color: #002448;
+  display: inline-block;
+  padding-bottom: 30px;
+  padding-top: 40px;
+  text-decoration: none;
+  text-transform:uppercase;
+  font-size:14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 微軟正黑體;
+  font-weight: 100;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.ap500 {
+  animation: appear 0.5s;
+}
+
+.ap1500 {
+  animation: appear 1.5s;
+}
+
+.ap2500 {
+  animation: appear 2.5s;
+}
+
+.ap3000 {
+  animation: appear 3s;
+}
+
+.ap3500 {
+  animation: appear 3.5s;
+}
+
+.ap4000 {
+  animation: appear 4s;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #41FFB5;
+  background-image: url("http://www.monoame.com/img/picme.jpg");
+  background-position: -30vw 0%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.green_border_box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: solid 12px #41FFB5;
+  box-sizing: border-box;
+  z-index: -1;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  background-color: #FEFFFE;
+  margin-left: 45%;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3);
+  transform: skewX(-6deg);
+  animation: rightin 2s;
+}
+
+@keyframes rightin {
+  0% {
+    margin-left: 55%;
+    transform: skewX(-6deg);
+  }
+  100% {
+    margin-left: 45%;
+    transform: skewX(-6deg);
+  }
+}
+.content {
+  transform: skewX(6deg);
+  vertical-align: top;
+  padding: 60px;
+  padding-top: 80px;
+  z-index: 1000;
+}
+.content > h2 {
+  color: #555;
+  padding-left: 20px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #555;
+}
+.content > p {
+  padding-left: 30px;
+  padding-top: 10px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #555;
+  line-height: 27px;
+}
+
+.left_nameblock {
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+}
+.left_nameblock > .name {
+  display: inline-block;
+  font-size: 45px;
+  letter-spacing: 2px;
+  color: #FEFFFE;
+  margin-right: 5px;
+}
+.left_nameblock > .num {
+  display: inline-block;
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: #41FFB5;
+}
+.left_nameblock > .title {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 15px;
+  color: #FEFFFE;
+}
+
+.sign {
+  width: 420px;
+  height: 150px;
+  position: absolute;
+  left: -240px;
+  top: initial;
+  bottom: 1%;
+  background-repeat: no-repeat;
+}
+
+.jobtitle {
+  position: absolute;
+  top: 100px;
+  left: -10px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 15px;
+  background-color: #41FFB5;
+  font-weight: 500;
+  overflow: hidden;
+  animation: expand 1s;
+  animation-fill-mode: forwards;
+  transform: skewX(-14deg);
+}
+.jobtitle > .jobtitle_word {
+  font-size: 25px;
+  letter-spacing: 5px;
+  color: #333;
+  white-space: nowrap;
+}
+
+@keyframes expand {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 360px;
+  }
+}
+.signpath {
+  stroke: #41FFB5;
+  stroke-width: 3.5px;
+  fill: none;
+  transform: scale(1.2);
+  stroke-dasharray: 1000px;
+  stroke-dashoffset: 1000px;
+  animation: draw 3s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.iconproj {
+  width: 90px;
+  height: 90px;
+  background-image: url("http://www.monoame.com/img/profoliopage-05.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin-top: 5px;
+}
+
+.iconpage {
+  width: 90px;
+  height: 90px;
+  background-image: url("http://www.monoame.com/img/profoliopage-03.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin-top: 5px;
+}
+
+.iconcal {
+  width: 90px;
+  height: 90px;
+  background-image: url("http://www.monoame.com/img/profoliopage-04.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin-top: 5px;
+}
+
+.works_block {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.works_block .block {
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  vertical-align: top;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.works_block .block:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.works_block .block > .title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #555;
+}
+.works_block .block > .iconpage, .works_block .block .iconcal, .works_block .block .iconproj, .works_block .block .title {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 750px) {
+  .cover {
+    width: 100%;
+    margin-top: 105%;
+    margin-left: -5%;
+    animation: none;
+  }
+
+  body {
+    background-position: -500px -100px;
+    background-size: 1500px auto;
+  }
+
+  .sign {
+    top: -80px;
+    left: 0%;
+  }
+
+  .left_nameblock {
+    top: 400px;
+    left: 50px;
+  }
+
+  .jobtitle_word {
+    font-size: 12px;
+  }
+}
