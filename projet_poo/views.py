@@ -14,7 +14,7 @@ from .utils import get_plot
 # Create your views here.
 def home(request):
     qs = AddPatient.objects.all()
-    return render(request, 'home.html',context={"patients":qs})
+    return render(request, 'hm2.html',context={"patients":qs})
 
 
 def index(request):
@@ -65,7 +65,10 @@ def patient(request):
                                  adresse=adresse, cin=cin, date_visite=date_visite,
                                  image=image_file, tuberculosis=tuberculosis)
         new_patient.save()
-        return render(request, 'home.html', context={"patient": new_patient})
+
+        qs = AddPatient.objects.all()
+
+        return render(request, 'home.html', context={"patient": new_patient, "patients":qs})
 
     return render(request, 'patient.html')
 def patientView(request):
