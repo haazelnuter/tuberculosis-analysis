@@ -57,8 +57,8 @@ def patient(request):
         print(prediction)
 
         tuberculosis = "Normal"
-        if prediction[0][1] >= 0.5:
-            tuberculosis = "Teburculose"
+        if prediction[0][1] >= 0.6:
+            tuberculosis = "tuberculose"
 
         new_patient = AddPatient(nom=nom, prenom=prenom, date=date, ville=ville, phone=phone, gender=gender,
                                  adresse=adresse, cin=cin, date_visite=date_visite,
@@ -69,8 +69,9 @@ def patient(request):
     return render(request, 'patient.html')
 def patientView(request):
     qs = AddPatient.objects.all()
-    x=[x.gender for x in qs]
+    x=["patient "+str(x.id) for x in qs]
     y=[y.tuberculosis for y in qs]
+    c=[x.gender for x in qs]
     chart = get_plot(x, y)
     return render(request, 'chartpie.html', {'chart': chart})
  # return render(request,'chartpie.html')

@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import base64
 from io import BytesIO
+
 def get_graph():
     buffer=BytesIO()
     plt.savefig(buffer,format='png')
@@ -14,7 +15,7 @@ def get_plot(x,y):
     plt.switch_backend('AGG')
     plt.figure(figsize=(8,5))
     plt.title("chi tkhrbi9a 3llah ghir tsd9")
-    plt.plot(x,y)
+    plt.scatter(x,y)
     plt.xticks(rotation=45)
     plt.xlabel('Gender')
     plt.ylabel('tuberculosis')
