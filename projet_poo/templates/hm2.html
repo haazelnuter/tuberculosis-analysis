@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>CodePen - &quot;Next&quot; to each other, but not _next_ to each other</title>
+
+    {% load static %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="./style3.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+        <link rel="stylesheet"  type="text/css" href="static/css/patient.css">
+
+<link rel="stylesheet" href="static/css/style2.css">
 
 </head>
 <body>
@@ -15,9 +19,14 @@
   <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
   <div class="page home-page">
     <div class="page-contents">
-      <h1>Home</h1>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptates dolore id aspernatur odit minus quidem deleniti ab rerum exercitationem dolores neque officiis explicabo possimus blanditiis sed, voluptatem ut. Ab?</p>
-      <p><label for="about">Learn more</label></p>
+      <h1>Visualisation</h1>
+    <div>
+       {% if chart %}
+           <img src="data:image/png;base64, {{ chart|safe }}" width="600">
+     {% endif %}
+    </div>
+
+      <p><label for="about">Add patient</label></p>
     </div>
   </div>
   <label class="nav" for="home">
@@ -30,8 +39,117 @@
   <input name="nav" type="radio" class="about-radio" id="about" />
   <div class="page about-page">
     <div class="page-contents">
-      <h1>About</h1>
-      <p>Amet consectetur adipisicing elit. Sed ipsam ad exercitationem, quo quae ullam, quidem laudantium corporis quis minima debitis nesciunt repellat. Quos dolore ex quis voluptas, minus ut?</p>
+
+     <div>
+
+
+<table align="center" cellpadding = "10">
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+<!----- First Name ---------------------------------------------------------->
+<tr>
+<td>Nom</td>
+<td><input type="text" name="First_Name" maxlength="30"/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+
+<!----- Last Name ---------------------------------------------------------->
+<tr>
+<td>Prenom</td>
+<td><input type="text" name="Last_Name" maxlength="30"/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+
+<!----- Date Of Birth -------------------------------------------------------->
+<tr>
+<td>Date de naissance</td>
+
+<td>
+<input type="date" id="start_date" name="start_date">
+</td>
+</tr>
+
+<!----- Ville ---------------------------------------------------------->
+<tr>
+<td>Ville</td>
+<td><input type="text" name="Ville" maxlength="100" /></td>
+</tr>
+
+<!----- Mobile Number ---------------------------------------------------------->
+<tr>
+<td>Numero de telephone</td>
+<td>
+<input type="text" name="Mobile_Number" maxlength="10" />
+(10 digit number)
+</td>
+</tr>
+
+<!----- Gender ----------------------------------------------------------->
+<tr>
+<td>Genre</td>
+<td>
+Homme <input type="radio" name="Gender" value="Male" />
+Femme <input type="radio" name="Gender" value="Female" />
+</td>
+</tr>
+
+<!----- Address ---------------------------------------------------------->
+<tr>
+<td>Adresse <br /><br /><br /></td>
+<td><textarea name="Address" rows="4" cols="30"></textarea></td>
+</tr>
+
+<!----- CIN ---------------------------------------------------------->
+<tr>
+<td>CIN</td>
+<td><input type="text" name="CIN" maxlength="30" />
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+
+
+<!----- Country ---------------------------------------------------------->
+<tr>
+<td>Date visite</td>
+<td><input type="date" name="date_visite" id="date_visite" /></td>
+</tr>
+
+
+<!----- Qualification---------------------------------------------------------->
+<tr>
+<td>X-RAY image<br /><br /><br /><br /><br /><br /><br /></td>
+    <td><input name="image" type="file" ></td>
+<td>
+
+</td>
+</tr>
+
+<!----- Results ---------------------------------------------------------->
+<tr>
+<td>Resultat de prediction</td>
+
+<td>
+
+</td>
+</tr>
+
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="submit">
+</td>
+</tr>
+    </form>
+</table>
+
+</form>
+
+
+     </div>
+
     </div>
   </div>
   <label class="nav" for="about">
@@ -44,7 +162,7 @@
   <input name="nav" type="radio" class="contact-radio" id="contact" />
   <div class="page contact-page">
     <div class="page-contents">
-      <h1>Patient</h1>
+      <h1>Patients</h1>
       <p>Eaque accusamus magnam error unde nam, atque provident omnis fugiat quam necessitatibus vel nulla sed quibusdam fuga veritatis assumenda alias quidem asperiores?</p>
       <p><a href="#">Get in touch</a></p>
     </div>

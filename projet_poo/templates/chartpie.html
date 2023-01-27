@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Visualisation</title>
+
+        {% load static %}
+
+<link rel="stylesheet" type="text/css" href="static/css/style3.css">
 </head>
+<header>
+
+	<nav class="menu">
+
+  <nav class="connexion">
+      <i class="fas fa-search"></i>
+    <a href="connexion">Home</a>
+    <i class="fas fa-search"></i>
+    <a href="visualisation">Visualisation</a>
+      <i class="fas fa-search"></i>
+    <a href="patient">Add patient</a>
+      <i class="fas fa-search"></i>
+    <a href="patients">Patients</a>
+  </nav>
+
+    </nav>
+
+</header>
 <body>
- <div class="col-md-8">
+<div class="cover">
+<div class="content">
+ <div>
        {% if chart %}
-           <img src="data:image/png;base64, {{ chart|safe }}">
+           <img src="data:image/png;base64, {{ chart|safe }}" width="600">
      {% endif %}
+ </div>
+</div>
+</div>
 </body>
 </html>

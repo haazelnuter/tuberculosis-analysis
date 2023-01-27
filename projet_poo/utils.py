@@ -14,10 +14,10 @@ def get_graph():
 def get_plot(x,y):
     plt.switch_backend('AGG')
     plt.figure(figsize=(8,5))
-    plt.title("chi tkhrbi9a 3llah ghir tsd9")
+    plt.title("Visualisation des données")
     plt.scatter(x,y)
     plt.xticks(rotation=45)
-    plt.xlabel('Gender')
+    plt.xlabel('patients')
     plt.ylabel('tuberculosis')
     plt.tight_layout
     graph=get_graph()

@@ -7,20 +7,37 @@
     <link rel="stylesheet"  type="text/css" href="static/css/patient.css">
     {% load static %}
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<html>
-<head>
-<title>Student Registration Form</title>
+<link rel="stylesheet" type="text/css" href="static/css/style3.css">
 
 </head>
 
+<header>
+
+	<nav class="menu">
+
+  <nav class="connexion">
+      <i class="fas fa-search"></i>
+    <a href="connexion">Home</a>
+    <i class="fas fa-search"></i>
+    <a href="visualisation">Visualisation</a>
+      <i class="fas fa-search"></i>
+    <a href="patient">Add patient</a>
+      <i class="fas fa-search"></i>
+    <a href="patients">Patients</a>
+  </nav>
+
+    </nav>
+
+</header>
+
 <body>
-<h3>Nouveau Patient</h3>
+<br><br><br><br>
+
+<div class="container">
 
 
-<table align="center" cellpadding = "10">
+
+<table class="rwd-table" cellpadding = "10">
 
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -123,6 +140,9 @@ Femme <input type="radio" name="Gender" value="Female" />
 </table>
 
 </form>
+
+
+</div>
 
 </body>
 </html>

@@ -1,48 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <title>Page de connexion</title>
-    <base href="/">
-    <link rel="stylesheet"  type="text/css" href="static/css/style.css">
+  <meta charset="UTF-8">
+  <title>index</title>
     {% load static %}
-     <script src="{% static '/js/javascript.js' %}" type="text/javascript"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" type="text/css" href="static/css/style3.css">
+
 </head>
+<header>
+
+	<nav class="menu">
+
+  <nav class="connexion">
+    <i class="fas fa-search"></i>
+    <a href="visualisation">Visualisation</a>
+      <i class="fas fa-search"></i>
+    <a href="patient">Add patient</a>
+      <i class="fas fa-search"></i>
+    <a href="patients">Patients</a>
+  </nav>
+
+    </nav>
+
+</header>
 <body>
-<div class="container right-panel-active">
-	<!-- Sign Up -->
-	<div class="container__form container--signup">
-		<form action="#" class="form" id="form1">
-			<h2 class="form__title">Sign Up</h2>
-			<input type="text" placeholder="User" class="input" />
-			<input type="email" placeholder="Email" class="input" />
-			<input type="password" placeholder="Password" class="input" />
-			<button class="btn">Sign Up</button>
-		</form>
-	</div>
-
-	<!-- Sign In -->
-	<div class="container__form container--signin">
-		<form action="#" class="form" id="form2">
-			<h2 class="form__title">Sign In</h2>
-			<input type="email" placeholder="Email" class="input" />
-			<input type="password" placeholder="Password" class="input" />
-			<a href="#" class="link">Forgot your password?</a>
-			<button class="btn">Sign In</button>
-		</form>
-	</div>
-
-	<!-- Overlay -->
-	<div class="container__overlay">
-		<div class="overlay">
-			<div class="overlay__panel overlay--left">
-				<button class="btn" id="signIn">Sign In</button>
-			</div>
-			<div class="overlay__panel overlay--right">
-				<button class="btn" id="signUp">Sign Up</button>
-			</div>
-		</div>
-	</div>
-</div>
+<!-- partial:index.partial.html -->
+<body>
+  <div class="cover">
+    <svg class="sign">
+      <path class="signpath" xmlns="http://www.w3.org/2000/svg" d="M5.28,70.22c4.1,4.48,11.18,5.15,16.9,3.12s10.36-6.26,14.65-10.56A222.88,222.88,0,0,0,76.35,9,71.61,71.61,0,0,0,75,55.6C75.74,58.06,76.8,60.67,79,62c4.65,2.76,10.14-1.87,13.31-6.25a126.22,126.22,0,0,0,20.3-44,66.26,66.26,0,0,0-3.47,45.95c0.87,3,2.9,6.55,6,6.1,1.69-.24,2.93-1.66,4-3a143.38,143.38,0,0,0,19-32A82,82,0,0,0,132,56.23a28.56,28.56,0,0,0,12.75-14.73l5.32,5.21a20.57,20.57,0,0,1,14.18-10.58c3.62,17.16,6.41,37.46-5.74,50.1-7.49-25.38,2.48-55,23.8-70.63,3.57-2.62,8.69-4.84,12.14-2.06,2.91,2.34,2.7,6.75,2.23,10.45L194,45.32c-0.22-2.07.82-4.48,2.86-4.93s4.1,2.4,2.6,3.83a19.65,19.65,0,0,1,19.31-11.49l26.36-4.54"></path>
+    </svg>
+    <div class="content">
+      <h2 class="ap500">Tuberculose Pulmonaire!</h2>
+      <p class="ap500">
+        c'est quoi la tuberculose pulmonaire ?<br>La tuberculose (TB): est une maladie infectieuse provoquée par une<br> mycobactérie qui se transmet par voie aérienne aussi bien aux enfants<br> qu’aux adultes. Elle touche le plus souvent les poumons mais atteint <br>aussi parfois d’autres organes et peut évoluer vers le décès si elle<br> n’est pas traitée.<br></p>
+      <br>
+        <h2 class="ap1500">Comment se transmet ?</h2>
+      <p class="ap1500"><br>Mycobacterium tuberculosis se transmet par les micro-sécrétions mises en <br>suspension dans l’air par une personne malade de tuberculose,<br> notamment lorsqu’elle tousse, parle, chante ou éternue.<br></p>
+    </div>
+  </div>
+  <div class="jobtitle">
+    <div class="jobtitle_word">Tuberculose/ Prédiction</div>
+  </div>
+  <div class="left_nameblock">
+    <div class="name">Halte À la</div>
+    <div class="num">0210744</div>
+    <div class="title">Tuberculose</div>
+  </div>
+  <div class="green_border_box"></div>
+</body>
+<!-- partial -->
+<script src="static/js/js3.js"></script>
 </body>
 </html>

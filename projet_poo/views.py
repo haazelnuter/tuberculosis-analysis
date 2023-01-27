@@ -14,7 +14,11 @@ from .utils import get_plot
 # Create your views here.
 def home(request):
     qs = AddPatient.objects.all()
-    return render(request, 'hm2.html',context={"patients":qs})
+    x = ["patient " + str(x.id) for x in qs]
+    y = [y.tuberculosis for y in qs]
+    c = [x.gender for x in qs]
+    chart = get_plot(x, y)
+    return render(request, 'home.html',context={"patients":qs, 'chart': chart})
 
 
 def index(request):
