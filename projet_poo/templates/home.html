@@ -16,20 +16,28 @@
 
 <div class="container">
 <h1>Les patients</h1>
-    <ul>
-
-      {{ patient.nom }}
-  </ul>
   <table class="rwd-table">
     <tbody>
       <tr>
         <th>Nom</th>
         <th>Prenom</th>
         <th>Genre</th>
-        <th>Prediction</th>
         <th>Date de visite</th>
+          <th>Statut</th>
       </tr>
+ {% block content %}
 
+{% for x in patients %}
+ <tr>
+        <th>{{ x.nom }}</th>
+        <th>{{ x.prenom }}</th>
+        <th>{{ x.gender }}</th>
+        <th>{{ x.date_visite }}</th>
+        <th>{{ x.tuberculosis }}</th>
+      </tr>
+    {% endfor %}
+
+{% endblock content %}
     </tbody>
   </table>
 </div>

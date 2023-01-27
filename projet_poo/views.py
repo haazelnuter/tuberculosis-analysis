@@ -13,7 +13,8 @@ from .utils import get_plot
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    qs = AddPatient.objects.all()
+    return render(request, 'home.html',context={"patients":qs})
 
 
 def index(request):
