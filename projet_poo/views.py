@@ -11,6 +11,10 @@ import numpy as np
 import tensorflow as tf
 from .utils import get_plot
 
+
+def index(request):
+    return render(request, 'index.html')
+
 # Create your views here.
 def home(request):
     qs = AddPatient.objects.all()
@@ -21,8 +25,6 @@ def home(request):
     return render(request, 'home.html',context={"patients":qs, 'chart': chart})
 
 
-def index(request):
-    return render(request, 'index.html')
 
 
 def patient(request):
@@ -77,9 +79,8 @@ def patient(request):
     return render(request, 'patient.html')
 def patientView(request):
     qs = AddPatient.objects.all()
-    x=["patient "+str(x.id) for x in qs]
+    x=["patient"+str(x.id) for x in qs]
     y=[y.tuberculosis for y in qs]
-    c=[x.gender for x in qs]
     chart = get_plot(x, y)
     return render(request, 'chartpie.html', {'chart': chart})
  # return render(request,'chartpie.html')

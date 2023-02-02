@@ -6,6 +6,7 @@
   <base href="/">
     <link rel="stylesheet"  type="text/css" href="static/css/patient.css">
     {% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <link rel="stylesheet" type="text/css" href="static/css/style3.css">
 
@@ -35,113 +36,65 @@
 
 <div class="container">
 
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label style="color:#FEFFFE;font-weight: bold">Nom</label>
+      <input type="text" class="form-control" name="First_Name" placeholder="Nom">
+    </div>
+    <div class="form-group col-md-4">
+      <label style="color:#FEFFFE;font-weight: bold">Prenom</label>
+      <input type="text" class="form-control" name="Last_Name" placeholder="Prenom">
+    </div>
+    <div class="form-group col-md-4">
+      <label style="color:#FEFFFE;font-weight: bold">CIN</label>
+      <input type="text" class="form-control" name="CIN" placeholder="CIN">
+    </div>
+  </div>
 
 
-<table class="rwd-table" cellpadding = "10">
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label style="color:#FEFFFE;font-weight: bold">Date de naissance</label>
+      <input type="date" class="form-control" name="start_date" placeholder="Date de naissance">
+    </div>
+    <div class="form-group col-md-4">
+      <label style="color:#FEFFFE;font-weight: bold">Date visite</label>
+      <input type="date" class="form-control" name="date_visite" placeholder="Date visite">
+    </div>
+    <div class="form-group col-md-4">
+      <label style="color:#FEFFFE;font-weight: bold">Ville</label>
+      <input type="text" class="form-control" name="Ville" placeholder="Ville">
+    </div>
+  </div>
 
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-<!----- First Name ---------------------------------------------------------->
-<tr>
-<td>Nom</td>
-<td><input type="text" name="First_Name" maxlength="30"/>
-(max 30 characters a-z and A-Z)
-</td>
-</tr>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label style="color:#FEFFFE;font-weight: bold">Numero de telephone</label>
+      <input type="text" class="form-control" name="Mobile_Number" placeholder="Numero de telephone">
+    </div>
+    <div class="form-group col-md-6">
+      <label style="color:#FEFFFE;font-weight: bold">Genre</label> <br>
+      <input type="radio" name="Gender" value="Male" /> <label >Homme</label>
+      <input type="radio" name="Gender" value="Female" /> <label>Femme</label>
+    </div>
+  </div>
 
-<!----- Last Name ---------------------------------------------------------->
-<tr>
-<td>Prenom</td>
-<td><input type="text" name="Last_Name" maxlength="30"/>
-(max 30 characters a-z and A-Z)
-</td>
-</tr>
+  <div class="form-group">
+    <label style="color:#FEFFFE;font-weight: bold">Adresse</label>
+    <input type="text" class="form-control" name="Address" placeholder="Adresse">
+  </div>
 
-<!----- Date Of Birth -------------------------------------------------------->
-<tr>
-<td>Date de naissance</td>
+  <div class="form-group">
+      <div class="form-group col-md-4">
+        <label style="color:#FEFFFE;font-weight: bold">X-RAY image</label>
+        <input type="file" class="form-control" name="image">
+      </div>
+  </div>
 
-<td>
-<input type="date" id="start_date" name="start_date">
-</td>
-</tr>
-
-<!----- Ville ---------------------------------------------------------->
-<tr>
-<td>Ville</td>
-<td><input type="text" name="Ville" maxlength="100" /></td>
-</tr>
-
-<!----- Mobile Number ---------------------------------------------------------->
-<tr>
-<td>Numero de telephone</td>
-<td>
-<input type="text" name="Mobile_Number" maxlength="10" />
-(10 digit number)
-</td>
-</tr>
-
-<!----- Gender ----------------------------------------------------------->
-<tr>
-<td>Genre</td>
-<td>
-Homme <input type="radio" name="Gender" value="Male" />
-Femme <input type="radio" name="Gender" value="Female" />
-</td>
-</tr>
-
-<!----- Address ---------------------------------------------------------->
-<tr>
-<td>Adresse <br /><br /><br /></td>
-<td><textarea name="Address" rows="4" cols="30"></textarea></td>
-</tr>
-
-<!----- CIN ---------------------------------------------------------->
-<tr>
-<td>CIN</td>
-<td><input type="text" name="CIN" maxlength="30" />
-(max 30 characters a-z and A-Z)
-</td>
-</tr>
-
-
-<!----- Country ---------------------------------------------------------->
-<tr>
-<td>Date visite</td>
-<td><input type="date" name="date_visite" id="date_visite" /></td>
-</tr>
-
-
-<!----- Qualification---------------------------------------------------------->
-<tr>
-<td>X-RAY image<br /><br /><br /><br /><br /><br /><br /></td>
-    <td><input name="image" type="file" ></td>
-<td>
-
-</td>
-</tr>
-
-<!----- Results ---------------------------------------------------------->
-<tr>
-<td>Resultat de prediction</td>
-
-<td>
-
-</td>
-</tr>
-
-<!----- Submit and Reset ------------------------------------------------->
-<tr>
-<td colspan="2" align="center">
-<input type="submit" value="submit">
-</td>
-</tr>
-    </form>
-</table>
-
+  <button type="submit" class="btn btn-primary">Ajouter patient</button>
 </form>
-
-
 </div>
 
 </body>
